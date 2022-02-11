@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS Calculator</title>
+
+<script type="text/javascript">
+
+//Function to add numbers
+function addNumbers(value1, value2)
+{
+  var nonEmptyOrAlphaValues = true;
+  nonEmptyOrAlphaValues = checkNumbers(Number(value1), Number(value2));
+  if (nonEmptyOrAlphaValues == true)
+      addanswer.innerHTML = Number(value1) + Number(value2);
+  else
+    addanswer.innerHTML = "Fill in values.";
+}
+
+//Function to Subtract
+function subtractNumbers(number1, number2)
+{
+  var nonEmptyValues = true;
+  nonEmptyValues = checkNumbers(Number(number1), Number(number2));
+  if (nonEmptyValues == true)
+    subanswer.innerHTML= Number(number1) - Number(number2);
+  else
+    subanswer.innerHTML="Fill in values.";
+}
+
+//Function to multiply
+function multiplyNumbers(number1, number2)
+{
+  var nonEmptyValues = true;
+  nonEmptyValues = checkNumbers(Number(number1), Number(number2));
+  if (nonEmptyValues == true)
+  multiplyanswer.innerHTML=Number(number1) * Number(number2);
+  else
+  multiplyanswer.innerHTML="Fill in values.";
+}
+
+//Function to divide
+function divideNumbers(number1, number2)
+{
+  var nonEmptyValues = true;
+  nonEmptyValues = checkNumbers(Number(number1), Number(number2));
+  if (nonEmptyValues == true)
+  divideanswer.innerHTML=Number(number1) / Number(number2);
+  else
+  divideanswer.innerHTML="Fill in values.";
+}
+
+
+//Function to square
+function squareNumbers(number1)
+{
+  var nonEmptyValues = true;
+  nonEmptyValues = checkNumbers(Number(number1));
+  if (nonEmptyValues == true)
+  squareanswer.innerHTML=Number(number1) * Number(number1);
+  else
+  squareanswer.innerHTML="Fill in values.";
+}
+
+
+//Function to check if numbers are empty
+function checkNumbers(number1,number2)
+{
+   if (isNaN(number1) ||  isNaN(number2) || number1=="" || number2=="") {
+     return false;
+   }
+   return true;
+ }
+</script>
+
+
+</head>
+    <body>
+      <h1>Calculator</h1><br><br>
+      <p>(NOTE:)This has the elementary basics of a calculator.If you need to get 5 to the power of 7,<br>or something like that,then just keep multiplying 5, 7 times
+      </p>
+
+        <label for="add1">First Number:</label>
+        <input type="text" id="add1" name="add1"><br><br>
+        <label for="add2">Second Number:</label>
+        <input type="text" id="add2" name="add2"><br><br>
+
+        <input type="submit" value="Add" onclick="addNumbers(add1.value,add2.value)">
+        <label id = "addanswer" for="addanswer"></label><br><br>
+
+
+    <label  for="subtract1">First Number:</label>
+    <input type="text" id="subtract1" name="subtract1"><br><br>
+    <label for="subtract2">Second Number:</label>
+    <input type="text" id="subtract2" name="subtract2"><br><br>
+
+    <input type="submit" value="Subtract" onclick="subtractNumbers(subtract1.value,subtract2.value)">
+    <label id = "subanswer" for="subanswer"></label><br><br>
+
+    <label for="multiply1">First Number:</label>
+    <input type="text" id="multiply1" name="multiply1"><br><br>
+    <label for="multiply2">Second Number:</label>
+    <input type="text" id="multiply2" name="multiply2"><br><br>
+
+
+    <input type="submit" value="Multiply" onclick="multiplyNumbers(multiply1.value,multiply2.value)">
+    <label id="multiplyanswer" for="multiplyanswer"></label><br><br>
+
+    <label for="divide1">First Number:</label>
+    <input type="text" id="divide1" name="divide1"><br><br>
+    <label for="divide2">Second Number:</label>
+    <input type="text" id="divide2" name="divide2"><br><br>
+
+    <input type="submit" value="Divide" onclick="divideNumbers(divide1.value,divide2.value)">
+    <label id="divideanswer" for="divideanswer"></label><br><br>
+
+<label for="Square1">Enter Number to Square:</label>
+<input type="text" id="square" name="square"><br><br>
+
+<input type="submit" value="Square" onclick="squareNumbers(square.value)">
+<label id="squareanswer" for="squareanswer"></label><br><br>
+
+
+   </body>
+</html>
